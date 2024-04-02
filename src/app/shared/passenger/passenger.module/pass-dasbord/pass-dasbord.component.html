@@ -1,0 +1,14 @@
+<app-pass-count [passobj]="passarray.length" [total]="getcount"></app-pass-count>
+
+<ul class="list-group-mb-4">
+    <li class="list-group-item" *ngFor="let pass of passarray">
+        {{pass.fullname}}
+
+    </li>
+</ul>
+
+
+
+<app-pass-card (emitinfo)="ondelete($event)" [passobj]="pass" *ngFor="let pass of passarray">
+
+</app-pass-card>

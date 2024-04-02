@@ -1,0 +1,22 @@
+
+<mat-card class="mb-4">
+    <mat-card-header>
+        <mat-card-title>
+            <input type="text" #fname [value]="passobj.fullname" class="form-control" >
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            Total chinging : {{(passobj.checkInDate |date )?? 'Not check In'}}
+        </p>
+
+        <p>
+            children {{passobj.children ?.length ?? 'no children'}}
+        </p>
+    </mat-card-content>
+
+    <button mat-raised-button color="primary" class="mx-4" *ngIf="!iseditable" (click)="onEdit()">Edit</button>
+    <button mat-raised-button color="accent"  class="mx-4" *ngIf="iseditable" (click)="ondone(fname.value)">Done</button>
+    <button mat-raised-button color="warn" (click)="ondelete()">Delete</button>
+</mat-card>
+
